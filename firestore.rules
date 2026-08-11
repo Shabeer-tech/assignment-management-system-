@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function admin() { return signedIn() && request.auth.token.email == "552560sam@gmail.com"; }
+    match /assignments/{assignmentId} {
+      allow read: if signedIn();
+      allow create, update, delete: if admin();
+    }
+    match /users/{userId} {
+      allow create: if signedIn() && request.auth.uid == userId;
+      allow read: if signedIn() && (request.auth.uid == userId || admin());
+      allow update: if signedIn() && (request.auth.uid == userId || admin());
+      allow delete: if admin();
+    }
+  }
+}

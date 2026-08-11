@@ -1,0 +1,617 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f5f5f5;
+color: black;
+line-height: 1.6;
+}
+
+/* =========================================
+COMMON / ORIGINAL CSS
+========================================= */
+
+a {
+text-decoration: none;
+color: blue;
+margin: 10px;
+font-weight: bold;
+}
+
+a:hover {
+color: red;
+}
+
+p {
+padding: 10px;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+/* Header */
+
+.header {
+background-color: #000;
+color: white;
+padding: 15px;
+}
+
+.header b,
+.header h3 {
+color: white;
+}
+
+/* Welcome */
+
+.al {
+background-color: aqua;
+padding: 20px;
+text-align: center;
+margin: 15px 0;
+border-radius: 10px;
+}
+
+/* Headings */
+
+h1 {
+text-align: center;
+margin: 20px 0;
+}
+
+h2 {
+margin-top: 20px;
+padding-left: 10px;
+}
+
+/* Footer */
+
+footer {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 20px;
+}
+
+/* Login */
+
+.login-btn {
+background-color: rgb(181, 213, 82);
+color: white;
+padding: 8px 15px;
+text-decoration: none;
+border-radius: 5px 8px;
+}
+
+.login-btn:hover {
+background-color: rgb(60, 216, 136);
+}
+
+/* Logo */
+
+.logo {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+/* Hamburger */
+
+.humburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+gap: 5px;
+}
+
+.humburger span {
+width: 25px;
+height: 3px;
+background: black;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+
+.humburger {
+    display: flex;
+}
+
+
+}
+
+/* =========================================
+FIREBASE AUTHENTICATION
+========================================= */
+
+.auth-page {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #f3f6fb;
+}
+
+.auth-card {
+width: min(420px, 92%);
+background: #fff;
+padding: 30px;
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+}
+
+.auth-card h2 {
+margin: 0 0 6px;
+padding: 0;
+text-align: center;
+}
+
+.auth-card .muted {
+text-align: center;
+margin: 0 0 20px;
+}
+
+.auth-card label,
+.admin-panel label {
+display: block;
+float: none;
+margin: 12px 0 6px;
+}
+
+.auth-card input,
+.admin-panel input,
+.admin-panel textarea {
+width: 100%;
+padding: 11px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 16px;
+}
+
+.primary-btn,
+.google-btn,
+.small-btn,
+.danger-btn {
+display: inline-block;
+border: 0;
+border-radius: 8px;
+padding: 10px 16px;
+cursor: pointer;
+font-weight: bold;
+margin: 8px 4px 8px 0;
+text-decoration: none;
+}
+
+.primary-btn {
+background: #4d8fe5;
+color: white;
+}
+
+.google-btn {
+background: #fff;
+border: 1px solid #aaa;
+color: #222;
+width: 100%;
+}
+
+.auth-card .primary-btn {
+width: 100%;
+}
+
+.auth-link {
+display: block;
+text-align: center;
+margin: 10px;
+}
+
+.message {
+min-height: 24px;
+margin: 12px 0;
+font-weight: bold;
+}
+
+.error {
+color: #c62828;
+}
+
+.success {
+color: #16833b;
+}
+
+/* =========================================
+DASHBOARD / ADMIN
+========================================= */
+
+.topbar {
+background: #111;
+color: #fff;
+padding: 15px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+}
+
+.topbar h2 {
+margin: 0;
+padding: 0;
+}
+
+.page {
+width: min(1100px, 92%);
+margin: 30px auto;
+}
+
+.assignment-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 18px;
+}
+
+.assignment-card,
+.admin-panel {
+background: #fff;
+padding: 20px;
+border-radius: 14px;
+box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+}
+
+.assignment-card h3 {
+margin-top: 0;
+}
+
+.inline {
+color: white !important;
+margin: 5px 5px 5px 0;
+}
+
+.small-btn {
+background: #fff;
+color: #111;
+}
+
+.danger-btn {
+background: #d32f2f;
+color: #fff;
+}
+
+.muted {
+color: #666;
+}
+
+.home-link {
+position: fixed;
+top: 18px;
+left: 20px;
+font-weight: bold;
+z-index: 10;
+}
+
+/* =========================================
+HOMEPAGE ONLY
+========================================= */
+
+.home-page {
+background: #f4f7fb;
+color: #222;
+}
+
+/* ---------- HEADER ---------- */
+
+.home-page .header {
+background: linear-gradient(135deg, #071952, #088395);
+padding: 20px 5%;
+color: white;
+box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
+}
+
+.home-page .header h2,
+.home-page .header h3,
+.home-page .header b {
+color: white;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.home-page .navbar {
+background: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 5%;
+box-shadow: 0 3px 15px rgba(0, 0, 0, .08);
+}
+
+.home-page .nav-left,
+.home-page .nav-right {
+display: flex;
+align-items: center;
+}
+
+.home-page .navbar a {
+color: #333;
+margin: 5px 12px;
+transition: .3s ease;
+}
+
+.home-page .navbar a:hover {
+color: #088395;
+}
+
+/* ---------- LOGIN BUTTON ---------- */
+
+.home-page .login-btn {
+background: linear-gradient(135deg, #088395, #05bfdb) !important;
+color: white !important;
+padding: 10px 22px !important;
+border-radius: 25px !important;
+box-shadow: 0 4px 12px rgba(8, 131, 149, .3);
+transition: .3s ease;
+}
+
+.home-page .login-btn:hover {
+background: #071952 !important;
+color: white !important;
+transform: translateY(-2px);
+}
+
+/* ---------- HAMBURGER ---------- */
+
+.home-page .humburger {
+background: white;
+padding: 10px;
+width: 45px;
+margin: 15px;
+border-radius: 8px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+}
+
+.home-page .humburger span {
+background: #088395;
+border-radius: 5px;
+}
+
+/* ---------- MAIN ---------- */
+
+.home-page main {
+width: 100%;
+}
+
+/* ---------- STUDENT LINKS ---------- */
+
+.home-page .student-links {
+width: 90%;
+max-width: 1100px;
+margin: 35px auto;
+}
+
+.home-page .student-links h2 {
+background: linear-gradient(135deg, #071952, #088395);
+color: white;
+padding: 18px;
+border-radius: 12px;
+margin-bottom: 15px;
+}
+
+.home-page .student-links a {
+display: inline-block;
+background: white;
+color: #088395;
+padding: 12px 20px;
+margin: 10px 5px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+transition: .3s ease;
+}
+
+.home-page .student-links a:hover {
+background: #088395;
+color: white;
+transform: translateY(-3px);
+}
+
+/* ---------- WELCOME ---------- */
+
+.home-page .welcome-section,
+.home-page .mission-section,
+.home-page .content-section {
+width: 90%;
+max-width: 1100px;
+margin: 30px auto;
+}
+
+.home-page .al {
+background: linear-gradient(135deg, #088395, #05bfdb);
+color: white;
+padding: 28px;
+text-align: center;
+border-radius: 16px;
+box-shadow: 0 8px 25px rgba(8, 131, 149, .2);
+font-size: 28px;
+}
+
+/* ---------- MISSION ---------- */
+
+.home-page .mission-section h3 {
+color: #071952;
+font-size: 24px;
+margin-bottom: 8px;
+}
+
+.home-page .mission-section p {
+background: white;
+color: #555;
+padding: 18px;
+border-radius: 10px;
+box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+}
+
+/* ---------- CONTENT ---------- */
+
+.home-page .content-section h1 {
+color: #071952;
+font-size: 34px;
+margin-bottom: 15px;
+}
+
+.home-page .content-section h2 {
+color: #088395;
+background: white;
+padding: 14px 18px;
+border-left: 5px solid #05bfdb;
+border-radius: 0 10px 10px 0;
+box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+margin-bottom: 10px;
+}
+
+.home-page .content-section p {
+background: white;
+color: #555;
+padding: 18px;
+border-radius: 10px;
+box-shadow: 0 3px 12px rgba(0, 0, 0, .04);
+}
+
+/* =========================================
+HOMEPAGE IMAGE
+IMPORTANT:
+object-fit: contain
+keeps the full photo visible
+========================================= */
+
+.home-page .hero-image {
+width: 100%;
+margin: 35px 0;
+}
+
+.home-page .hero-image img {
+display: block;
+width: 90%;
+max-width: 1100px;
+height: auto;
+max-height: 600px;
+object-fit: contain;
+margin: 0 auto;
+border-radius: 18px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+
+/* ---------- FOOTER ---------- */
+
+.home-page footer {
+background: linear-gradient(135deg, #071952, #088395);
+margin-top: 50px;
+padding: 40px 20px;
+border-radius: 20px 20px 0 0;
+text-align: center;
+}
+
+.home-page footer h3 {
+color: white;
+margin-bottom: 10px;
+}
+
+.home-page footer p {
+background: transparent;
+color: #e8f9ff;
+box-shadow: none;
+}
+
+/* =========================================
+HOMEPAGE MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+```
+.home-page .navbar {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-page .nav-left,
+.home-page .nav-right {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home-page .al {
+    font-size: 22px;
+    padding: 20px 12px;
+}
+
+.home-page .content-section h1 {
+    font-size: 26px;
+}
+
+.home-page .content-section h2 {
+    font-size: 21px;
+}
+
+.home-page .hero-image img {
+    width: 94%;
+    height: auto;
+    max-height: none;
+}
+
+.home-page .student-links a {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.home-page footer {
+    border-radius: 15px 15px 0 0;
+}
+```
+
+}
+
+/* =========================================
+VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+```
+.home-page .header {
+    padding: 15px;
+}
+
+.home-page .navbar {
+    padding: 12px;
+}
+
+.home-page .navbar a {
+    margin: 4px 6px;
+}
+
+.home-page .al {
+    font-size: 20px;
+}
+
+.home-page .content-section h1 {
+    font-size: 22px;
+}
+
+.home-page .content-section h2 {
+    font-size: 19px;
+}
+
+.home-page .hero-image img {
+    width: 96%;
+}
+```
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignments</title>
+<link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<header class="topbar">
+  <h2>Assignment Management System</h2>
+  <div><span id="welcome"></span> <button id="logoutBtn" class="small-btn">Logout</button></div>
+</header>
+<main class="page">
+  <h1>Available Assignments</h1>
+  <p class="muted">View or download assignments uploaded by the administrator.</p>
+  <div id="assignmentList" class="assignment-grid"></div>
+  <p id="message" class="message"></p>
+</main>
+<script type="module" src="dashboard.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(function () { console.log("PWA Service Worker registered"); })
+      .catch(function (error) { console.error("PWA registration failed:", error); });
+  });
+}
+</script>
+</body>
+</html>

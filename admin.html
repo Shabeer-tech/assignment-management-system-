@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<header class="topbar">
+  <h2>Admin Dashboard</h2>
+  <div><span>Administrator</span> <button id="logoutBtn" class="small-btn">Logout</button></div>
+</header>
+<main class="page">
+  <section class="admin-panel">
+    <h1>Upload Assignment</h1>
+    <form id="uploadForm">
+      <label>Assignment Title</label>
+      <input id="title" required placeholder="e.g. Data Structure Unit 1">
+      <label>Subject</label>
+      <input id="subject" required placeholder="e.g. Data Structure">
+      <label>Description</label>
+      <textarea id="description" rows="4" placeholder="Optional description"></textarea>
+      <label>Assignment File (PDF/DOC/DOCX)</label>
+      <input id="file" type="file" accept=".pdf,.doc,.docx" required>
+      <button class="primary-btn" type="submit">Upload Assignment</button>
+    </form>
+    <p id="message" class="message"></p>
+  </section>
+
+  <section>
+    <h2>Uploaded Assignments</h2>
+    <div id="assignmentList" class="assignment-grid"></div>
+  </section>
+</main>
+<script type="module" src="admin.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(function () { console.log("PWA Service Worker registered"); })
+      .catch(function (error) { console.error("PWA registration failed:", error); });
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <style>
+       /* About Page */
+
+.about-header{
+    width:90%;
+    margin:20px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+.about-header a{
+    text-decoration:none;
+    background:#1e4ede;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+}
+
+
+.about-content{
+    width:80%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+.about-content p{
+    width:100%;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+    background:none;
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+}
+
+
+.about-content h2{
+    color:#1e4ede;
+}
+
+
+/* mobile */
+@media(max-width:700px){
+
+    .about-header{
+        width:90%;
+    }
+
+    .about-content{
+        width:90%;
+        padding:20px;
+    }
+
+    .about-content p{
+        font-size:16px;
+    }
+
+}
+    </style>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body class="about-content" >
+    <table width="100%">
+        <tr>
+            <td width="50%"><h2>About Me</h2>
+
+            </td>
+            <td width="50%" align="right" valign="top"><h4><a href="index.html">home</a> </h1></td>
+        </tr>
+
+
+
+    </table>
+    <hr>
+    
+
+<p>
+Hello, my name is Sameer. I am a B.Tech Information Technology student with a
+strong interest in technology, programming and web development. I am currently
+improving my skills in HTML, CSS, JavaScript and C++ to build creative and
+useful digital solutions.
+
+I have a passion for learning new concepts and applying them through practical
+projects. I enjoy designing websites, understanding how applications work and
+solving programming problems. My aim is to develop strong technical skills and
+become a successful software developer.
+
+This project is one of my steps towards improving my development skills. Through
+this project, I learned how to structure web pages, create attractive layouts and
+present information in a simple and organized way.
+
+I believe continuous learning and practice are the keys to growth in the field of
+technology. I am always excited to explore new tools, improve my knowledge and
+work on innovative ideas.
+</p>
+    
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(function () { console.log("PWA Service Worker registered"); })
+      .catch(function (error) { console.error("PWA registration failed:", error); });
+  });
+}
+</script>
+</body>
+</html>
