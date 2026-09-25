@@ -9,7 +9,7 @@
   "description": "Student Assignment Management System",
   "icons": [
     {
-      "src": "pwa-icon.svg",
+      "src": "logo.png",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
